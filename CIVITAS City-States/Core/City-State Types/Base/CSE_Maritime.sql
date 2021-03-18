@@ -10,7 +10,7 @@
 UPDATE	CSE_ClassTypes
 SET		TraitDescription = 'LOC_CSE_TRADE_TRAIT_DESCRIPTION_ALT'
 WHERE	Type IN ('TRADE')
-AND EXISTS (SELECT * FROM ModValidation WHERE VERSION = 'CSE_MARITIME');
+AND EXISTS (SELECT * FROM ModValidation WHERE Version = 'CSE_MARITIME');
 
 -----------------------------------------------
 -- TraitModifiers
