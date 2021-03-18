@@ -164,6 +164,14 @@ WHERE EXISTS (SELECT Type FROM Types WHERE Type IN
 'LEADER_SIMON_BOLIVAR'
 ));
 
+REPLACE INTO ModValidation (Version)
+SELECT	'NF4'
+WHERE EXISTS (SELECT Type FROM Types WHERE Type IN
+(
+'CIVILIZATION_BABYLON_STK',
+'LEADER_HAMMURABI'
+));
+
 INSERT INTO ModValidation (Version)
 SELECT	Setting
 FROM	CSE_UserSettings
@@ -209,6 +217,11 @@ UPDATE	CSE_Master
 SET		Discard = 1
 WHERE	CityState = 'CSE_SINGAPORE' AND
 EXISTS (SELECT * FROM ModValidation WHERE Version = 'NF1');
+
+UPDATE	CSE_Master
+SET		Discard = 1
+WHERE	CityState = 'CSE_JOHANNESBURG' AND
+EXISTS (SELECT * FROM ModValidation WHERE Version = 'NF4');
 
 -- Remove City-States from Master depending on active DLC, XP etc
 DELETE FROM CSE_Master

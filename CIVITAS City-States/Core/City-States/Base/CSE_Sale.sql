@@ -11,7 +11,16 @@
 
 INSERT INTO Types
 		(Type,								Kind			)
-VALUES	('MODTYPE_CSE_SALE_EXTRA_ATTACK',	'KIND_MODIFIER'	);
+VALUES	('MODTYPE_CSE_SALE_EXTRA_ATTACK',	'KIND_MODIFIER'	),
+		('CSE_SALE_ATTACK_ABILITY',			'KIND_ABILITY'	);
+
+-----------------------------------------------
+-- TypeTags
+-----------------------------------------------
+
+INSERT INTO TypeTags
+		(Type,								Tag									)
+VALUES	('CSE_SALE_ATTACK_ABILITY',			'CLASS_NAVAL_RAIDER'				);
 
 -----------------------------------------------
 -- TraitModifiers
@@ -24,11 +33,11 @@ VALUES	('MINOR_CIV_CSE_SALE_TRAIT',	'CSE_SALE_SUZERAIN_EXTRA_ATTACK'	);
 -----------------------------------------------
 -- DynamicModifiers
 -----------------------------------------------
-
+/**
 INSERT INTO DynamicModifiers
 		(ModifierType,						CollectionType,				EffectType							)
-VALUES	('MODTYPE_CSE_SALE_EXTRA_ATTACK',	'COLLECTION_PLAYER_CITIES',	'EFFECT_ADJUST_UNIT_NUM_ATTACKS'	);
-
+VALUES	('MODTYPE_CSE_SALE_EXTRA_ATTACK',	'COLLECTION_OWNER',			'EFFECT_ADJUST_UNIT_NUM_ATTACKS'	);
+**/
 -----------------------------------------------
 -- Modifiers
 -----------------------------------------------
@@ -36,45 +45,45 @@ VALUES	('MODTYPE_CSE_SALE_EXTRA_ATTACK',	'COLLECTION_PLAYER_CITIES',	'EFFECT_ADJ
 INSERT INTO Modifiers
 		(ModifierId,						ModifierType,							SubjectRequirementSetId				)
 VALUES	('CSE_SALE_SUZERAIN_EXTRA_ATTACK',	'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',	'PLAYER_IS_SUZERAIN'				),
-		('CSE_SALE_EXTRA_ATTACK',			'MODTYPE_CSE_SALE_EXTRA_ATTACK',		'REQSET_CSE_SALE_IS_NAVAL_RAIDER'	);
+		('CSE_SALE_EXTRA_ATTACK',			'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',	NULL								);
 
 -----------------------------------------------
 -- ModifierArguments
 -----------------------------------------------
 
 INSERT INTO ModifierArguments
-		(ModifierId,						Name,			Value					)
-VALUES	('CSE_SALE_SUZERAIN_EXTRA_ATTACK',	'ModifierId',	'CSE_SALE_EXTRA_ATTACK'	),
-		('CSE_SALE_EXTRA_ATTACK',			'Amount',		1						);
+		(ModifierId,						Name,			Value								)
+VALUES	('CSE_SALE_SUZERAIN_EXTRA_ATTACK',	'ModifierId',	'CSE_SALE_EXTRA_ATTACK'				),
+		('CSE_SALE_EXTRA_ATTACK',			'AbilityType',	'CSE_SALE_ATTACK_ABILITY'			);
 
 -----------------------------------------------
--- RequirementSets
+-- UnitAbilities
 -----------------------------------------------
 
-INSERT INTO RequirementSets
-        (RequirementSetId,					RequirementSetType			)
-VALUES	('REQSET_CSE_SALE_IS_NAVAL_RAIDER',	'REQUIREMENTSET_TEST_ALL'	);
+INSERT INTO UnitAbilities
+		(UnitAbilityType,						Name,						Inactive,	Description						)
+VALUES	('CSE_SALE_ATTACK_ABILITY',				'LOC_CSE_SALE_SUZ_NAME',	1,			'LOC_CSE_SALE_SUZ_DESC'		);
 
 -----------------------------------------------
--- RequirementSetRequirements
+-- UnitAbilityModifiers
 -----------------------------------------------
 
-INSERT INTO RequirementSetRequirements
-        (RequirementSetId,					RequirementId					)
-VALUES	('REQSET_CSE_SALE_IS_NAVAL_RAIDER',	'REQ_CSE_SALE_IS_NAVAL_RAIDER'	);
+INSERT INTO UnitAbilityModifiers
+		(UnitAbilityType,						ModifierId)
+VALUES	('CSE_SALE_ATTACK_ABILITY',				'CSE_SALE_ATTACK_ABILITY_MOD'	);
 
 -----------------------------------------------
--- Requirements
+-- Modifiers
 -----------------------------------------------
 
-INSERT INTO Requirements
-		(RequirementId,						RequirementType								)
-VALUES	('REQ_CSE_SALE_IS_NAVAL_RAIDER',	'REQUIREMENT_UNIT_PROMOTION_CLASS_MATCHES'	);
+INSERT INTO Modifiers
+		(ModifierId,							ModifierType,								SubjectRequirementSetId	)
+VALUES	('CSE_SALE_ATTACK_ABILITY_MOD',			'MODIFIER_UNIT_ADJUST_NUM_ATTACKS',			NULL	);
 
 -----------------------------------------------
--- RequirementArguments
+-- ModifierArguments
 -----------------------------------------------
 
-INSERT INTO RequirementArguments
-		(RequirementId,						Name,					Value							)
-VALUES	('REQ_CSE_SALE_IS_NAVAL_RAIDER',	'UnitPromotionClass',	'PROMOTION_CLASS_NAVAL_RAIDER'	);
+INSERT INTO ModifierArguments
+		(ModifierId,							Name,			Value							)
+VALUES	('CSE_SALE_ATTACK_ABILITY_MOD',			'Amount',		1								);

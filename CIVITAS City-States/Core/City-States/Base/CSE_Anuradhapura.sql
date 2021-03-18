@@ -66,7 +66,7 @@ VALUES	('IMPROVEMENT_CSE_DAGOBA',	'TERRAIN_GRASS'			),
 INSERT INTO Improvement_YieldChanges
 		(ImprovementType,			YieldType,			YieldChange	)
 VALUES	('IMPROVEMENT_CSE_DAGOBA',	'YIELD_FAITH',		1			),
-		('IMPROVEMENT_CSE_DAGOBA',	'YIELD_SCIENCE',	1			);
+		('IMPROVEMENT_CSE_DAGOBA',	'YIELD_CULTURE',	1			);
 
 -----------------------------------------------
 -- Improvement_BonusYieldChanges
@@ -74,8 +74,8 @@ VALUES	('IMPROVEMENT_CSE_DAGOBA',	'YIELD_FAITH',		1			),
 
 INSERT INTO Improvement_BonusYieldChanges
 		(Id,	ImprovementType,			YieldType,			BonusYieldChange,	PrereqTech,					PrereqCivic				)
-VALUES	(100,	'IMPROVEMENT_CSE_DAGOBA',	'YIELD_SCIENCE',	1,					'TECH_EDUCATION',			NULL					),
-		(101,	'IMPROVEMENT_CSE_DAGOBA',	'YIELD_SCIENCE',	1,					'TECH_SCIENTIFIC_THEORY',	NULL					),
+VALUES	(100,	'IMPROVEMENT_CSE_DAGOBA',	'YIELD_CULTURE',	1,					'TECH_EDUCATION',			NULL					),
+		(101,	'IMPROVEMENT_CSE_DAGOBA',	'YIELD_CULTURE',	1,					'TECH_FLIGHT',				NULL					),
 		(102,	'IMPROVEMENT_CSE_DAGOBA',	'YIELD_FAITH',		1,					NULL,						'CIVIC_THEOLOGY'		),
 		(103,	'IMPROVEMENT_CSE_DAGOBA',	'YIELD_FAITH',		1,					NULL,						'CIVIC_REFORMED_CHURCH'	);
 
@@ -86,7 +86,7 @@ VALUES	(100,	'IMPROVEMENT_CSE_DAGOBA',	'YIELD_SCIENCE',	1,					'TECH_EDUCATION',
 INSERT INTO Improvement_Adjacencies
 		(ImprovementType,			YieldChangeId				)
 VALUES	('IMPROVEMENT_CSE_DAGOBA',	'ADJ_CSE_DAGOBA_HOLY_SITE'	),
-		('IMPROVEMENT_CSE_DAGOBA',	'ADJ_CSE_DAGOBA_CAMPUS'		);
+		('IMPROVEMENT_CSE_DAGOBA',	'ADJ_CSE_DAGOBA_THEATER'	);
 
 -----------------------------------------------
 -- Adjacency_YieldChanges
@@ -95,7 +95,7 @@ VALUES	('IMPROVEMENT_CSE_DAGOBA',	'ADJ_CSE_DAGOBA_HOLY_SITE'	),
 INSERT INTO Adjacency_YieldChanges
 		(ID,							Description,	YieldType,			YieldChange,	TilesRequired,	AdjacentDistrict,		PrereqCivic	)
 VALUES	('ADJ_CSE_DAGOBA_HOLY_SITE',	'Placeholder',	'YIELD_FAITH',		1,				1,				'DISTRICT_HOLY_SITE',	NULL		),
-		('ADJ_CSE_DAGOBA_CAMPUS',		'Placeholder',	'YIELD_SCIENCE',	1,				1,				'DISTRICT_CAMPUS',		NULL		);
+		('ADJ_CSE_DAGOBA_THEATER',		'Placeholder',	'YIELD_CULTURE',	1,				1,				'DISTRICT_THEATER',		NULL		);
 
 -----------------------------------------------
 -- TraitModifiers
@@ -103,16 +103,19 @@ VALUES	('ADJ_CSE_DAGOBA_HOLY_SITE',	'Placeholder',	'YIELD_FAITH',		1,				1,				'
 
 INSERT INTO TraitModifiers
 		(TraitType,								ModifierId							)
-VALUES	('MINOR_CIV_CSE_ANURADHAPURA_TRAIT',	'CSE_ANURADHAPURA_SUZERAIN_DAGOBA'	);
+VALUES	('MINOR_CIV_CSE_ANURADHAPURA_TRAIT',	'CSE_ANURADHAPURA_SUZERAIN_DAGOBA'	),
+		('MINOR_CIV_CSE_ANURADHAPURA_TRAIT',	'CSE_ANURADHAPURA_FREE_RELIC'	);
 
 -----------------------------------------------
 -- Modifiers
 -----------------------------------------------
 
 INSERT INTO Modifiers
-		(ModifierId,							ModifierType,								SubjectRequirementSetId	)
-VALUES	('CSE_ANURADHAPURA_SUZERAIN_DAGOBA',	'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',		'PLAYER_IS_SUZERAIN'	),
-		('CSE_ANURADHAPURA_DAGOBA',				'MODIFIER_PLAYER_ADJUST_VALID_IMPROVEMENT',	NULL					);
+		(ModifierId,							ModifierType,								SubjectRequirementSetId,	RunOnce,	Permanent	)
+VALUES	('CSE_ANURADHAPURA_SUZERAIN_DAGOBA',	'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',		'PLAYER_IS_SUZERAIN',		0,			0	),
+		('CSE_ANURADHAPURA_DAGOBA',				'MODIFIER_PLAYER_ADJUST_VALID_IMPROVEMENT',	NULL,						0,			0	),
+		('CSE_ANURADHAPURA_FREE_RELIC',			'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',		'PLAYER_IS_SUZERAIN',		0,			1	),
+		('CSE_ANURADHAPURA_FREE_RELIC_MOD',		'MODIFIER_PLAYER_GRANT_RELIC',				'REQ_CSE_PLAYER_DAGOBA',	0,			1	);
 
 -----------------------------------------------
 -- ModifierArguments
@@ -121,4 +124,38 @@ VALUES	('CSE_ANURADHAPURA_SUZERAIN_DAGOBA',	'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIE
 INSERT INTO ModifierArguments
 		(ModifierId,							Name,				Value						)
 VALUES	('CSE_ANURADHAPURA_SUZERAIN_DAGOBA',	'ModifierId',		'CSE_ANURADHAPURA_DAGOBA'	),
-		('CSE_ANURADHAPURA_DAGOBA',				'ImprovementType',	'IMPROVEMENT_CSE_DAGOBA'	);
+		('CSE_ANURADHAPURA_DAGOBA',				'ImprovementType',	'IMPROVEMENT_CSE_DAGOBA'	),
+		('CSE_ANURADHAPURA_FREE_RELIC',			'ModifierId',		'CSE_ANURADHAPURA_FREE_RELIC_MOD'	),
+		('CSE_ANURADHAPURA_FREE_RELIC_MOD',		'Amount',			1	);
+
+-----------------------------------------------
+-- RequirementSets
+-----------------------------------------------
+
+INSERT INTO RequirementSets
+        (RequirementSetId,					RequirementSetType			)
+VALUES	('REQ_CSE_PLAYER_DAGOBA',			'REQUIREMENTSET_TEST_ALL'	);
+
+-----------------------------------------------
+-- RequirementSetRequirements
+-----------------------------------------------
+
+INSERT INTO RequirementSetRequirements
+        (RequirementSetId,					RequirementId					)
+VALUES	('REQ_CSE_PLAYER_DAGOBA',			'REQ_CSE_PLAYER_HAS_DAGOBA'		);
+
+-----------------------------------------------
+-- Requirements
+-----------------------------------------------
+
+INSERT INTO Requirements
+		(RequirementId,					RequirementType								)
+VALUES	('REQ_CSE_PLAYER_HAS_DAGOBA',	'REQUIREMENT_PLAYER_HAS_IMPROVEMENT'		);
+
+-----------------------------------------------
+-- RequirementArguments
+-----------------------------------------------
+
+INSERT INTO RequirementArguments
+		(RequirementId,					Name,					Value							)
+VALUES	('REQ_CSE_PLAYER_HAS_DAGOBA',	'ImprovementType',		'IMPROVEMENT_CSE_DAGOBA'		);
