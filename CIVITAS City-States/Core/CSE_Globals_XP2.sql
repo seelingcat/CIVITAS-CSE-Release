@@ -8,5 +8,5 @@
 -----------------------------------------------
 
 UPDATE	GlobalParameters
-SET		Value = (SELECT Value FROM CSE_UserSettings WHERE Setting = 'SUZERAIN_DIPLOMATIC_FAVOR')
+SET		Value = 0
 WHERE	Name = 'WORLD_CONGRESS_SUZERAIN_FAVOR_PER_TURN';

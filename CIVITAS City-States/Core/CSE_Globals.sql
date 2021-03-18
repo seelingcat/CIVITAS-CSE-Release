@@ -154,23 +154,6 @@ SELECT	'MODIFIER_CSE_DEFAULT_STAR_FORT_PRODUCTION',
 WHERE EXISTS (SELECT * FROM CSE_UserSettings WHERE Setting = 'WALLS_PRODUCTION' AND Value = 1);
 
 -----------------------------------------------
--- OPTION | Should City-States start with Walls outright?
------------------------------------------------
-
-INSERT INTO TraitModifiers (TraitType, ModifierId)
-SELECT	'MINOR_CIV_DEFAULT_TRAIT',
-		'MODIFIER_CSE_DEFAULT_FREE_WALLS'
-WHERE EXISTS (SELECT * FROM CSE_UserSettings WHERE Setting = 'WALLS_START' AND Value = 1);
-
-INSERT INTO Modifiers (ModifierId, ModifierType, RunOnce, Permanent)
-VALUES	('MODIFIER_CSE_DEFAULT_FREE_WALLS', 'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER', 0, 0),
-		('MODIFIER_CSE_DEFAULT_FREE_WALLS_MOD', 'MODIFIER_SINGLE_CITY_GRANT_BUILDING_IN_CITY_IGNORE', 1, 1);
-
-INSERT INTO ModifierArguments (ModifierId, Name, Value)
-VALUES	('MODIFIER_CSE_DEFAULT_FREE_WALLS', 'ModifierId', 'MODIFIER_CSE_DEFAULT_FREE_WALLS_MOD'),
-		('MODIFIER_CSE_DEFAULT_FREE_WALLS_MOD', 'BuildingType', 'BUILDING_WALLS');
-
------------------------------------------------
 -- OPTION | Should City-States be allowed to build any district?
 -----------------------------------------------
 

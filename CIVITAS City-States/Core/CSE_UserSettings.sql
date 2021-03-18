@@ -249,32 +249,13 @@ VALUES
 -- NOTE: This is also translates into Warmonger Penalties pre-Gathering Storm
 -----------------------------------------------
 
-	('CITY_STATE_WARMONGER',	150	),
+	('CITY_STATE_WARMONGER',	150	);
 
 -----------------------------------------------		
--- OPTION | Should Consular City states give Favor? or should they give loyalty?
 
--- Our Default: 0 (Favor)
-
--- Change to 1 if you'd like them to give loyalty instead (what they did before Gathering Storm)
------------------------------------------------
-
-	('CONSULAR_BONUS_TYPE',		0	),
 
 -----------------------------------------------		
--- OPTION | How much Diplomatic Favor should you earn for being Suzerain? 
 
--- Game Default: 1
--- Our Default: 0
-
--- Requires Gathering Storm
--- NOTE: This will be in addition to that provided by the Consular city-state. If the Consular city-state is disabled, it's better to change this to something other than 0.
--- NOTE: This will not change the tooltip text that tells you that you get +1 Favor per turn for being suzerain.
------------------------------------------------
-
-	('SUZERAIN_DIPLOMATIC_FAVOR',	0	);
-
------------------------------------------------		
 -- REMOVALS | Disable City-State Types
 -- Change 0 to 1 to disable a City-State Type.
 
@@ -343,7 +324,21 @@ VALUES
 	('VALLETTA',			'DISABLED',	0	),
 	('VILNIUS',				'DISABLED',	0	),
 	('YEREVAN',				'DISABLED',	0	),
-	('ZANZIBAR',			'DISABLED',	0	);
+	('ZANZIBAR',			'DISABLED',	0	),
+
+	('CAGUANA',				'DISABLED',	0	), -- Requires NF1 (Maya/GC)
+	('HUNZA',				'DISABLED',	0	), -- Requires NF1 (Maya/GC)
+	('LAHORE',				'DISABLED',	0	), -- Requires NF1 (Maya/GC)
+	('SINGAPORE',			'DISABLED',	0	), -- Requires NF1 (Maya/GC)
+	('TARUGA',				'DISABLED',	0	), -- Requires NF1 (Maya/GC)
+	('VATICAN_CITY',		'DISABLED',	0	), -- Requires NF1 (Maya/GC)
+
+	('NALANDA',				'DISABLED',	0	), -- Requires NF4 (Byzantium/Gaul)
+	('JOHANNESBURG',		'DISABLED',	0	), -- Requires NF4 (Byzantium/Gaul)
+	('SAMARKAND',			'DISABLED',	0	), -- Requires NF4 (Byzantium/Gaul)
+	('AYUTTHAYA',			'DISABLED',	0	), -- Requires NF4 (Byzantium/Gaul)
+	('WOLIN',				'DISABLED',	0	), -- Requires NF4 (Byzantium/Gaul)
+	('CHINGUETTI',			'DISABLED',	0	); -- Requires NF4 (Byzantium/Gaul)
 
 INSERT INTO CSE_UserSettings (Setting, Section, Requires, Value) VALUES	
 	
