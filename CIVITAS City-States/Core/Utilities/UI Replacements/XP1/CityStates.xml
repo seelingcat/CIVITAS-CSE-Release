@@ -36,7 +36,7 @@
 				<Grid																		Anchor="L,B"	Offset="176,6"	Size="90,28"					Style="CityStateColumnHeaderGrid">
 					<Label																Anchor="C,C"																				Style="CityStateColumnHeaderText" String="LOC_CITY_STATES_ENVOYS" />
 				</Grid>
-				<Grid																		Anchor="L,B"	Offset="268,6"	Size="268,6"					Style="CityStateColumnHeaderGrid">
+				<Grid																		Anchor="L,B"	Offset="268,6"	Size="268,28"					Style="CityStateColumnHeaderGrid">
 					<!-- CHIMP: Previously: Size="198,28" -->
 					<Label																Anchor="L,C"	Offset="10,0"													Style="CityStateColumnHeaderText" String="LOC_CITY_STATES_BONUSES_EARNED" />
 				</Grid>

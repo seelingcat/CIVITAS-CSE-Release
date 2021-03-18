@@ -12,6 +12,18 @@ VALUES
 
 	("pt_BR",	"LOC_MINOR_CIV_LARGEST_INFLUENCE_ENVOYS",				"10 [ICON_ENVOY] Emissários:"		),
 
+	("pt_BR",	"LOC_CSE_FAVOR_SUZERAIN_NAME",							"CSE - Favor para Suzeranos"		),
+	("pt_BR",	"LOC_CSE_FAVOR_SUZERAIN_DESC",							"Quando habilitado, jogadores recebem +1 de Favor Diplomático por turno para cada cidade-estado que ele seja suzerano. Quando desabilitado, ser o suzerano de uma cidade-estado não concede Favor Diplomático."		),
+
+	("pt_BR",	"LOC_CSE_FAVOR_CONSULAR_NAME",							"CSE - Bônus de Cidades-Estado Consulares"		),
+	("pt_BR",	"LOC_CSE_FAVOR_CONSULAR_DESC",							"Quando habilitado, Cidades-Estado Consulares irão conceder Favor Diplomático como recompensa por Enviados. Quando desabilitado, elas fornecem Lealdade."		),
+
+	("pt_BR",	"LOC_CSE_WALLS_NAME",									"CSE - Muralhas Gratuitas para Cidades-Estado"		),
+	("pt_BR",	"LOC_CSE_WALLS_DESC",									"Quando habilitado, Citades-Estado irão começar o jogo com Muralhas em suas cidades."		),
+
+	("pt_BR",	"LOC_CSE_ETHIOPIA_MODE_NAME",							"CSE - Bônus de Emissários Alternativos."        ),
+    ("pt_BR",	"LOC_CSE_ETHIOPIA_MODE_DESC",							"Quando habilitado, os Bônus de Emissários irão escalar com o nível da edificação e afetarão as edificações da Área Diplomática, similar às mudanças feitas no pack Etiopia - New Frontier."        ),
+
 -----------------------------------------------
 -- Scientific
 -----------------------------------------------
@@ -182,7 +194,7 @@ VALUES
 	("pt_BR",	"LOC_CIVILIZATION_CSE_ANURADHAPURA_ADJECTIVE",		"Anuradiana"	),
 	("pt_BR",	"LOC_CIVILIZATION_CSE_ANURADHAPURA_DESCRIPTION",	"{LOC_CIVILIZATION_CSE_ANURADHAPURA_NAME}"		),
 	("pt_BR",	"LOC_CSE_ANURADHAPURA_TRAIT_NAME",					"Bônus de Suzerano de {LOC_CIVILIZATION_CSE_ANURADHAPURA_NAME}"	),
-	("pt_BR",	"LOC_CSE_ANURADHAPURA_TRAIT_DESCRIPTION",			"Seus construtores podem construir a melhoria Dágaba.[NEWLINE][NEWLINE] Dágabas fornecem +1 de [ICON_SCIENCE] Ciência e +1 de [ICON_FAITH] Fé, com +1 de [ICON_SCIENCE] Ciência adicional para cada Campus adjacente, e +1 de [ICON_FAITH] Fé para cada Lugar Sagrado ajacente. [ICON_SCIENCE] Ciência e [ICON_FAITH] Fé adicionais conforme avança nas árvores tecnológicas e cívica."	),
+	("pt_BR",	"LOC_CSE_ANURADHAPURA_TRAIT_DESCRIPTION",			"Seus construtores podem construir a melhoria Dágaba.[NEWLINE][NEWLINE] Dágabas fornecem +1 de [ICON_CULTURE] Cultura e +1 de [ICON_FAITH] Fé, com +1 de [ICON_CULTURE] Cultura adicional para cada Campus adjacente, e +1 de [ICON_FAITH] Fé para cada Lugar Sagrado ajacente. [ICON_CULTURE] Cultura e [ICON_FAITH] Fé adicionais conforme avança nas árvores tecnológicas e cívica. Quando um jogador constrói seu primeiro Mahavihara, recebe uma Relíquia."	),
 
 	("pt_BR",	"LOC_LEADER_MINOR_CIV_CSE_ANURADHAPURA_NAME",		"{LOC_CIVILIZATION_CSE_ANURADHAPURA_NAME}"	),
 	("pt_BR",	"LOC_CITY_NAME_ANURADHAPURA",						"{LOC_CIVILIZATION_CSE_ANURADHAPURA_NAME}"	),
@@ -193,7 +205,7 @@ VALUES
 	("pt_BR",	"LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_CSE_ANURADHAPURA_CHAPTER_HISTORY_PARA_4",	"Anuradapura alcançou o pico da sua magnificência pelo começo da era comum. A cidade teve alguns dos mais complexos sistemas de irrigação do mundo antigo, situada na zona seca do país, a administração construiu muitos tanques para irrigar a terra. A maior parte destes tanques ainda sobrevive. A área foi inabitada por muitos séculos, mas a população local permanecia ciente das ruínas. No livro 'An Historical Relation of the Island Ceylon' de 1681, Robert Knox escreveu: 'Nesta Cidade de Anurodgburro uma Vígilia permanece, além dos quais não há mais pessoas que oferecem obediência ao Rei de Candy'. Em 1821, John Davy escreveu que 'Anooradapoora, que já foi a capital do Ceilão, agora é uma pequena vila médiana, no meio de um deserto. Um grande tanque, númerosos pilares de pedra, dois ou três imensos túmulos (provavelmente velhos dagobahs) são seus principais remanescências. Ainda é considerado um local sagrado; e é um local de peregrinação'. A cidade possuí hoje uma população de 50.000."	),
 
 	("pt_BR",	"LOC_IMPROVEMENT_CSE_DAGOBA_NAME",					"Dágaba"	),
-	("pt_BR",	"LOC_IMPROVEMENT_CSE_DAGOBA_DESCRIPTION",			"Dágabas fornecem +1 de [ICON_SCIENCE] Ciência e +1 de [ICON_FAITH] Fé, com +1 de [ICON_SCIENCE] Ciência adicional para cada Campus adjacente, e +1 de [ICON_FAITH] Fé para cada Lugar Sagrado ajacente. [ICON_SCIENCE] Ciência e [ICON_FAITH] Fé adicionais conforme avança nas árvores tecnológicas e cívica."	),
+	("pt_BR",	"LOC_IMPROVEMENT_CSE_DAGOBA_DESCRIPTION",			"Dágabas fornecem +1 de [ICON_CULTURE] Cultura e +1 de [ICON_FAITH] Fé, com +1 de [ICON_CULTURE] Cultura adicional para cada Campus adjacente, e +1 de [ICON_FAITH] Fé para cada Lugar Sagrado ajacente. [ICON_CULTURE] Cultura e [ICON_FAITH] Fé adicionais conforme avança nas árvores tecnológicas e cívica. Quando um jogador constrói seu primeiro Mahavihara, recebe uma Relíquia."	),
 
 	("pt_BR",	"LOC_PEDIA_IMPROVEMENTS_PAGE_IMPROVEMENT_CSE_DAGOBA_CHAPTER_HISTORY_PARA_1",		"Estupas, 'Dagobas' em cingalês, originaram-se como tumulos pré-budistas nos quais sramanas foram enterrados em uma posição sentada chamada cetiya. Após o parinirvana do Buda, seus restos mortais foram cremados e as cinzas divididas e enterradas sob oito montes, com mais dois montículos envolvendo a urna e as brasas. A estupa foi elaborada à medida que o budismo se espalhou para outros países asiáticos, tornando-se, por exemplo, o chörten do Tibete e o pagode no leste da Ásia. As estupas foram construídas no Sri Lanka logo depois que Devanampiya Tissa de Anuradhapura se converteu ao budismo. A primeira estupa a ser construída foi a Thuparamaya. Mais tarde, muitos outros foram construídos ao longo dos anos, alguns como o Jetavanaramaya em Anuradhapura, sendo uma das estruturas antigas mais altas do mundo."	),
 
@@ -978,8 +990,8 @@ VALUES
 -- City-State | Nalanda
 -----------------------------------------------
 	
-	("pt_BR",	"LOC_CIVILIZATION_CSE_NALANDA_NAME",			"Nalanda"	),
-	("pt_BR",	"LOC_CIVILIZATION_CSE_NALANDA_ADJECTIVE",		"Nalandense"	),
+	("pt_BR",	"LOC_CIVILIZATION_CSE_NALANDA_NAME",			"Taxila"	),
+	("pt_BR",	"LOC_CIVILIZATION_CSE_NALANDA_ADJECTIVE",		"Taxilense"	),
 	("pt_BR",	"LOC_CIVILIZATION_CSE_NALANDA__DESCRIPTION",	"Cidade-Estado de {LOC_CIVILIZATION_CSE_NALANDA_NAME}"		),
 	("pt_BR",	"LOC_CSE_NALANDA_TRAIT_NAME",					"Bônus de Suzerano de {LOC_CIVILIZATION_CSE_NALANDA_NAME}"	),
 	("pt_BR",	"LOC_CSE_NALANDA_TRAIT_DESCRIPTION",			"Cidades Felizes recebem +5% de [ICON_FAITH] Fé se tiverem um Campus, e +5% de [ICON_SCIENCE] Ciência se tiverem um Lugar Sagrado. Cada um destes bônus aumenta para +10% em cidades em Êxtase."	),
@@ -987,9 +999,9 @@ VALUES
 	("pt_BR",	"LOC_LEADER_MINOR_CIV_CSE_NALANDA_NAME",		"{LOC_CIVILIZATION_CSE_NALANDA_NAME}"	),
 	("pt_BR",	"LOC_CITY_NAME_NALANDA",						"{LOC_CIVILIZATION_CSE_NALANDA_NAME}"	),
 
-	("pt_BR",	"LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_CSE_NALANDA_CHAPTER_HISTORY_PARA_1",	"Nalanda era um antigo e aclamado mosteiro budista. Está localizado a cerca de 95 km a sudeste de Patna. Do quinto século EC até 1200 EC, Nalanda era um renomado centro internacional de aprendizado. Grande parte do conhecimento de Nalanda vem de escritos de monges peregrinos como Xuanzang e Yijing."	),
-	("pt_BR",	"LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_CSE_NALANDA_CHAPTER_HISTORY_PARA_2",	"Nalanda apresentava métodos altamente formalizados de aprendizado védico. Floresceu sob o patrocínio do Império Gupta e depois sob Harsha, imperador de Kannauj. As tradições culturais liberais herdadas da era Gupta resultaram em um período de crescimento e prosperidade até o século IX. Os séculos subsequentes foram uma época de declínio gradual, período durante o qual os desenvolvimentos tântricos do budismo se tornaram mais pronunciados no leste da Índia sob o Império de Pala."	),
-	("pt_BR",	"LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_CSE_NALANDA_CHAPTER_HISTORY_PARA_3",	"No seu auge, a escola atraiu acadêmicos e estudantes de perto e de longe, com alguns viajando pelo Tibete, China, Coréia e Ásia Central. A evidência arqueológica também observa o contato com a dinastia Shailendra da Indonésia, um dos reis de quem construiu um mosteiro no complexo. Nalanda foi saqueada e destruída por um exército da dinastia mameluca do sultanato de Delhi, sob Bakhtiyar Khilji, em c.1200 EC. Enquanto algumas fontes notam que o Mahavihara continuou a funcionar de forma improvisada por mais algum tempo, acabou sendo abandonado e esquecido até o século 19, quando o local foi pesquisado e as escavações preliminares foram conduzidas pelo Serviço Arqueológico da Índia."	),
+	("pt_BR",	"LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_CSE_NALANDA_CHAPTER_HISTORY_PARA_1",	"Taxila era uma importante cidade localizada no atual Paquistão. É mais conhecida por sua antiga universidade, considerada por alguns como uma das mais antigas do mundo. Foi o maior centro de aprendizado da região, reunindo pessoas de toda a região para estudar."	),
+	("pt_BR",	"LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_CSE_NALANDA_CHAPTER_HISTORY_PARA_2",	"A Universidade de Taxila era conhecida por seus ensinamentos nas ciências, especialmente medicina, mas ensinava uma variedade de matérias, desde arte e matemática até religião e arco e flecha. Acredita-se que mais de 10.000 alunos da China, Babilônia, Síria e Grécia estudaram na Universidade de Taxila, sem falar de muitos outros alunos do subcontinente indiano. Entre os alunos mais notáveis ​​da universidade estavam Charaka - o pai da medicina indiana - e o próprio Chandragupta Maurya."	),
+	("pt_BR",	"LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_CSE_NALANDA_CHAPTER_HISTORY_PARA_3",	"A universidade parece ter sido fundada por volta de 515 aC e prosperou sob o domínio persa, maurya e indo-grego durante os séculos 3 e 2 aC. No entanto, foi muito danificado na destruição causada pelos hunos brancos no final do século 5 aC. Hoje as ruínas de Taxila estão bem preservadas; eles são um Patrimônio Mundial da UNESCO e é o principal destino turístico do Paquistão hoje."	),
 
 -----------------------------------------------
 -- City-State | Nassau
@@ -1067,7 +1079,7 @@ VALUES
 	("pt_BR",	"LOC_CIVILIZATION_CSE_QATNA_ADJECTIVE",		"Cataneano"	),
 	("pt_BR",	"LOC_CIVILIZATION_CSE_QATNA_DESCRIPTION",	"{LOC_CIVILIZATION_CSE_QATNA_NAME}"		),
 	("pt_BR",	"LOC_CSE_QATNA_TRAIT_NAME",					"Bônus de Suzerano de {LOC_CIVILIZATION_CSE_QATNA_NAME}"	),
-	("pt_BR",	"LOC_CSE_QATNA_TRAIT_DESCRIPTION",			"Edificações da Zona Comercial podem ser comprados com [ICON_FAITH] Fé e fornecem +1 de [ICON_PRODUCTION] Produção."	),
+	("pt_BR",	"LOC_CSE_QATNA_TRAIT_DESCRIPTION",			"Edificações da Zona Industrial podem ser comprados com [ICON_FAITH] Fé e fornecem +1 de [ICON_PRODUCTION] Produção."	),
 	
 	("pt_BR",	"LOC_LEADER_MINOR_CIV_CSE_QATNA_NAME",		"{LOC_CIVILIZATION_CSE_QATNA_NAME}"	),
 	("pt_BR",	"LOC_CITY_NAME_QATNA",						"{LOC_CIVILIZATION_CSE_QATNA_NAME}"	),
@@ -1102,13 +1114,30 @@ VALUES
 	("pt_BR",	"LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_CSE_SALE_CHAPTER_HISTORY_PARA_7",	"A crise generalizada que foi criada pela controvérsia do Berber Dahir criou uma elite nacionalista marroquina, um tanto popular, baseada em Salé e Fez, com fortes inclinações anti-Berber, anti-Ocidente, anti-secularismo e com inclinações árabe-islâmicas. Esse episódio da história marroquina foi a base de uma parte da consciência política que levaria, quatorze anos depois, a assinatura do Manifesto da Independência do Marrocos em 11 de janeiro de 1944 por muitos ativistas e líderes 'Slawi'. Salé também tem sido considerado o reduto da esquerda marroquina por muitas décadas, onde muitos líderes residiram."	),
 
 -----------------------------------------------
+-- City-State | Firaxis Samarkand -> Bukhara
+-----------------------------------------------
+	
+	("pt_BR",	"LOC_CIVILIZATION_SAMARKAND_NAME",				"Bucara"	),
+	("pt_BR",	"LOC_CIVILIZATION_SAMARKAND_ADJECTIVE",			"de Bucara"	),
+	("pt_BR",	"LOC_CIVILIZATION_SAMARKAND_DESCRIPTION",		"{LOC_CIVILIZATION_SAMARKAND_NAME}"		),
+	("pt_BR",	"LOC_SAMARKAND_TRAIT_NAME",						"Bônus de Suzerano de {LOC_CIVILIZATION_SAMARKAND_NAME}"	),
+
+	("pt_BR",	"LOC_CITY_NAME_CSE_BUKHARA",					"{LOC_CIVILIZATION_SAMARKAND_NAME}"	),
+
+	("pt_BR",	"LOC_PEDIA_IMPROVEMENTS_PAGE_IMPROVEMENT_TRADING_DOME_CHAPTER_HISTORY_PARA_1",	"O século dezesseis foi uma época de grande prosperidade para a cidade de Bucara com a fundação do Shaybanid Khanate de Bucara. Floresceu como um centro político e comercial e, durante este período, vários bazares cobertos foram construídos na cidade. Esses mercados abobadados se tornaram um símbolo da cidade, com 4 sobreviventes até hoje, o maior dos quais é a Cúpula Comercial de Tak-i Zargaron, que abrigava os joalheiros da cidade. Cúpulas comerciais semelhantes também podem ser encontradas nas proximidades de Samarkand e Tashkent."	),
+
+	("pt_BR",	"LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_SAMARKAND_CHAPTER_HISTORY_PARA_1",	"Bucara é uma cidade no Uzbequistão que tem uma longa história com a Rota da Seda, servindo como centro de comércio, cultura, religião e poder, que remonta pelo menos ao século 6 a.C. Acredita-se que seu nome deriva da área de oásis em que está localizado, mas os estudiosos discordam quanto à origem desse nome, com alguns alegando que vem de uma palavra sogdiana que significa 'Local de Boa Fortuna' e outros remontam ao Palavra sânscrita 'Vihara' - que significa um mosteiro budista."	),
+	("pt_BR",	"LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_SAMARKAND_CHAPTER_HISTORY_PARA_2",	"Bucara há muito depende do comércio da Rota da Seda, que liga a China ao Oriente Médio e à Europa. Com a chegada do Islã, também se tornou uma cidade de grande importância política, começando em 892, quando o Império Samanida mudou sua capital de Samarcanda para Bucara, e continuando no século 15 quando atingiu seu apogeu como capital do Canato de Bucara sob o governo dos Shaibanidas. Com suas numerosas mesquitas e madrasas, Bucara também se tornou um importante centro intelectual do mundo islâmico."	),
+	("pt_BR",	"LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_SAMARKAND_CHAPTER_HISTORY_PARA_3",	"No século 19, a importância econômica de Bucara diminuiu à medida que o mundo continuou a se deslocar para as rotas de comércio marítimo entre o Oriente e o Ocidente. No entanto, a cidade - como a capital do Emirado de Bucara - continuou a desempenhar um papel político desproporcional como uma peça importante do chamado Grande Jogo entre os Impérios Russo e Britânico, enquanto eles buscavam esculpir esferas de influência na Ásia Central . Eventualmente, tornou-se parte do Império Russo e mais tarde parte da União Soviética. Hoje o centro histórico da cidade é um Patrimônio Mundial da UNESCO, abrangendo muitas das belas mesquitas, madrasas e mausoléus da cidade."	),
+
+-----------------------------------------------
 -- City-State | Samarqand
 -----------------------------------------------
 	
 	("pt_BR",	"LOC_CIVILIZATION_CSE_SAMARQAND_NAME",				"Samarcanda"	),
 	("pt_BR",	"LOC_CIVILIZATION_CSE_SAMARQAND_ADJECTIVE",			"Samarcanda"	),
-	("pt_BR",	"LOC_CIVILIZATION_CSE_SAMARQAND__DESCRIPTION",		"Cidade-Estado de {LOC_CIVILIZATION_CSE_SAMARQAND_NAME}"		),
-	("pt_BR",	"LOC_CSE_SAMARQAND_TRAIT_NAME",						"{LOC_CIVILIZATION_CSE_SAMARQAND_NAME}"	),
+	("pt_BR",	"LOC_CIVILIZATION_CSE_SAMARQAND_DESCRIPTION",		"{LOC_CIVILIZATION_CSE_SAMARQAND_NAME}"		),
+	("pt_BR",	"LOC_CSE_SAMARQAND_TRAIT_NAME",						"Bônus de Suzerano de {LOC_CIVILIZATION_CSE_SAMARQAND_NAME}"	),
 	("pt_BR",	"LOC_CSE_SAMARQAND_TRAIT_DESCRIPTION",				"Sua civilização ganha +2% de [ICON_SCIENCE] Ciência para cada [ICON_GREATPERSON] Grande Personalidade que tenha recebido, até um total de +30%."	),
 	
 	("pt_BR",	"LOC_LEADER_MINOR_CIV_CSE_SAMARQAND_NAME",			"{LOC_CIVILIZATION_CSE_SAMARQAND_NAME}"	),
@@ -1125,8 +1154,8 @@ VALUES
 	
 	("pt_BR",	"LOC_CIVILIZATION_CSE_SANAA_NAME",				"Saná"	),
 	("pt_BR",	"LOC_CIVILIZATION_CSE_SANAA_ADJECTIVE",			"de Saná"	),
-	("pt_BR",	"LOC_CIVILIZATION_CSE_SANAA__DESCRIPTION",		"Cidade-Estado de {LOC_CIVILIZATION_CSE_SANAA_NAME}"		),
-	("pt_BR",	"LOC_CSE_SANAA_TRAIT_NAME",						"{LOC_CIVILIZATION_CSE_SANAA_NAME}"	),
+	("pt_BR",	"LOC_CIVILIZATION_CSE_SANAA_DESCRIPTION",		"{LOC_CIVILIZATION_CSE_SANAA_NAME}"		),
+	("pt_BR",	"LOC_CSE_SANAA_TRAIT_NAME",						"Bônus de Suzerano de {LOC_CIVILIZATION_CSE_SANAA_NAME}"	),
 	("pt_BR",	"LOC_CSE_SANAA_TRAIT_DESCRIPTION",				"[ICON_TRADEROUTE] Rotas Comerciais fornecem +1 de [ICON_FOOD] Alimento para cada [ICON_TRADINGPOST] Posto Comercial doméstico que eles passam."	),
 	
 	("pt_BR",	"LOC_LEADER_MINOR_CIV_CSE_SANAA_NAME",			"{LOC_CIVILIZATION_CSE_SANAA_NAME}"	),
@@ -1143,7 +1172,7 @@ VALUES
 	("pt_BR",	"LOC_CIVILIZATION_CSE_SEUTHOPOLIS_NAME",				"Seuthopolis"	),
 	("pt_BR",	"LOC_CIVILIZATION_CSE_SEUTHOPOLIS_ADJECTIVE",			"de Seuthopolis"	),
 	("pt_BR",	"LOC_CIVILIZATION_CSE_SEUTHOPOLIS_DESCRIPTION",			"{LOC_CIVILIZATION_CSE_SEUTHOPOLIS_NAME}"		),
-	("pt_BR",	"LOC_CSE_SEUTHOPOLIS_TRAIT_NAME",						"{LOC_CIVILIZATION_CSE_SEUTHOPOLIS_NAME}"	),
+	("pt_BR",	"LOC_CSE_SEUTHOPOLIS_TRAIT_NAME",						"Bônus de Suzerano de {LOC_CIVILIZATION_CSE_SEUTHOPOLIS_NAME}"	),
 	("pt_BR",	"LOC_CSE_SEUTHOPOLIS_TRAIT_DESCRIPTION",				"Eliminar uma unidade inimiga fornece [ICON_GOLD] Ouro igual a sua [ICON_STRENGTH] Força de Combate."	),
 	
 	("pt_BR",	"LOC_LEADER_MINOR_CIV_CSE_SEUTHOPOLIS_NAME",			"{LOC_CIVILIZATION_CSE_SEUTHOPOLIS_NAME}"	),
@@ -1159,7 +1188,7 @@ VALUES
 	
 	("pt_BR",	"LOC_CIVILIZATION_CSE_SHAHR_E_SUKHTE_NAME",				"Shahr-e Sukhté"	),
 	("pt_BR",	"LOC_CIVILIZATION_CSE_SHAHR_E_SUKHTE_ADJECTIVE",		"de Shahr-e Sukhté"	),
-	("pt_BR",	"LOC_CIVILIZATION_CSE_SHAHR_E_SUKHTE__DESCRIPTION",		"Cidade-Estado de {LOC_CIVILIZATION_CSE_SHAHR_E_SUKHTE_NAME}"		),
+	("pt_BR",	"LOC_CIVILIZATION_CSE_SHAHR_E_SUKHTE__DESCRIPTION",		"{LOC_CIVILIZATION_CSE_SHAHR_E_SUKHTE_NAME}"		),
 	("pt_BR",	"LOC_CSE_SHAHR_E_SUKHTE_TRAIT_NAME",					"Bônus de Suzerano de {LOC_CIVILIZATION_CSE_SHAHR_E_SUKHTE_NAME}"	),
 	("pt_BR",	"LOC_CSE_SHAHR_E_SUKHTE_TRAIT_DESCRIPTION",				"Suas cidades ganham +15% de [ICON_CULTURE] Cultura enquanto você não está em guerra com nenhuma outra civilização."	),
 	
@@ -1177,13 +1206,16 @@ VALUES
 	("pt_BR",	"LOC_CIVILIZATION_CSE_SIDON_ADJECTIVE",		"de Sidon"	),
 	("pt_BR",	"LOC_CIVILIZATION_CSE_SIDON_DESCRIPTION",	"{LOC_CIVILIZATION_CSE_SIDON_NAME}"		),
 	("pt_BR",	"LOC_CSE_SIDON_TRAIT_NAME",					"Bônus de Suzerano de {LOC_CIVILIZATION_CSE_SIDON_NAME}"	),
-	("pt_BR",	"LOC_CSE_SIDON_TRAIT_DESCRIPTION",			"Queixas contra você deterioram duas vezes mais rápido."	),
+	("pt_BR",	"LOC_CSE_SIDON_TRAIT_DESCRIPTION",			"+1 de [ICON_MOVEMENT] Movimento para unidades civis."	),
 	
 	("pt_BR",	"LOC_LEADER_MINOR_CIV_CSE_SIDON_NAME",		"{LOC_CIVILIZATION_CSE_SIDON_NAME}"	),
 	("pt_BR",	"LOC_CITY_NAME_SIDON",						"{LOC_CIVILIZATION_CSE_SIDON_NAME}"	),
 
 	("pt_BR",	"LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_CSE_SIDON_CHAPTER_HISTORY_PARA_1",	"Sídon, conhecida localmente como Sayda ou Saida, é habitada desde muito cedo na pré-história. O sítio arqueológico de Sídon II mostra uma assembléia lítica datada de Acheulean, enquanto que em Sídon III, há um conjunto de Neolítico Pesado, o que sugere hoje, um pouco antes da invenção da cerâmica. Foi uma das cidades fenícias mais importantes, e pode ter sido a mais antiga. De lá e de outros portos foi fundado um grande império comercial mediterrâneo. Homero elogiou a habilidade de seus artesãos em produzir vidros, tinturas roxas e a habilidade de suas mulheres na arte do bordado. Foi também a partir daqui que uma parte colonizadora foi fundar a cidade de Tiro. Tiro também se transformou em uma grande cidade, e nos anos subsequentes houve competição entre os dois, cada qual alegando ser a metrópole ('cidade mãe') da Fenícia. A fabricação de vidro, o empreendimento mais importante de Sídon na era fenícia, foi conduzida em grande escala, e a produção de tintura roxa foi quase tão importante quanto. A pequena concha do trunculus Murex foi quebrada para extrair o pigmento que era tão raro que se tornou a marca da realeza."	),
 	("pt_BR",	"LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_CSE_SIDON_CHAPTER_HISTORY_PARA_2",	"Como outras cidades-estados fenícias, Sídon sofria de uma sucessão de conquistadores. No final da era persa, em 351 aC, foi invadida pelo imperador Artaxerxes III e depois por Alexandre, o Grande, em 333 aC, quando a era helenística de Sídon começou. Sob os sucessores de Alexandre, gozou de relativa autonomia e organizou jogos e competições em que participavam os maiores atletas da região."	),
+
+	("pt_BR",	"LOC_CSE_SIDON_SUZ_NAME",					"Bônus de Suserano de Sídon"	),
+	("pt_BR",	"LOC_CSE_SIDON_SUZ_DESC",					"+1 de [ICON_MOVEMENT] Movimento (Sídon)"	),
 
 -----------------------------------------------
 -- City-State | Singapore
@@ -1209,7 +1241,7 @@ VALUES
 	("pt_BR",	"LOC_CIVILIZATION_CSE_SRI_KSETRA_NAME",			"Sri Ksetra"	),
 	("pt_BR",	"LOC_CIVILIZATION_CSE_SRI_KSETRA_ADJECTIVE",	"de Sri Ksetra"	),
 	("pt_BR",	"LOC_CIVILIZATION_CSE_SRI_KSETRA_DESCRIPTION",	"{LOC_CIVILIZATION_CSE_SRI_KSETRA_NAME}"		),
-	("pt_BR",	"LOC_CSE_SRI_KSETRA_TRAIT_NAME",				"{LOC_CIVILIZATION_CSE_SRI_KSETRA_NAME}"	),
+	("pt_BR",	"LOC_CSE_SRI_KSETRA_TRAIT_NAME",				"Bônus de Suzerano de {LOC_CIVILIZATION_CSE_SRI_KSETRA_NAME}"	),
 	("pt_BR",	"LOC_CSE_SRI_KSETRA_TRAIT_DESCRIPTION",			"Lugares Sagrados fornecem [ICON_FOOD] Alimento igual ao seu bônus de [ICON_FAITH] Fé por adjacência."	),
 	
 	("pt_BR",	"LOC_LEADER_MINOR_CIV_CSE_SRI_KSETRA_NAME",		"{LOC_CIVILIZATION_CSE_SRI_KSETRA_NAME}"	),
@@ -1225,7 +1257,7 @@ VALUES
 	("pt_BR",	"LOC_CIVILIZATION_CSE_TANGIER_NAME",		"Tânger"	),
 	("pt_BR",	"LOC_CIVILIZATION_CSE_TANGIER_ADJECTIVE",	"de Tânger"	),
 	("pt_BR",	"LOC_CIVILIZATION_CSE_TANGIER_DESCRIPTION",	"{LOC_CIVILIZATION_CSE_TANGIER_NAME}"		),
-	("pt_BR",	"LOC_CSE_TANGIER_TRAIT_NAME",				"{LOC_CIVILIZATION_CSE_TANGIER_NAME}"	),
+	("pt_BR",	"LOC_CSE_TANGIER_TRAIT_NAME",				"Bônus de Suzerano de {LOC_CIVILIZATION_CSE_TANGIER_NAME}"	),
 	("pt_BR",	"LOC_CSE_TANGIER_TRAIT_DESCRIPTION",		"Receba 2 [ICON_CIVICBOOSTED] Inspirações ao entrar em uma nova era. Distritos de Teatro recebem +1 de [ICON_CULTURE] Cultura para cada 2 distritos adjacentes."	),
 	
 	("pt_BR",	"LOC_CSE_TANGIER_THEATER_ADJACENCY",		"+{1_num} de [ICON_CULTURE] Cultura dos distritos adjacentes. (Tangier)"		),
@@ -1285,7 +1317,7 @@ VALUES
 	("pt_BR",	"LOC_CSE_TISSAMAHARAMA_TRAIT_DESCRIPTION",			"Unidades Terrestres (Reconhecimento, Corpo-a-corpo, À Distância e Anti-Cavalaria) ganham +5 de [ICON_STRENGTH] Força de Combate."	),
 	
 
-	("en_US",	"LOC_CSE_TISSAMAHARAMA_STRENGTH",					"+{1_Amount} Bônus de Combate (Tissamaharama)"	),
+	("pt_BR",	"LOC_CSE_TISSAMAHARAMA_STRENGTH",					"+{1_Amount} Bônus de Combate (Tissamaharama)"	),
 	("pt_BR",	"LOC_LEADER_MINOR_CIV_CSE_TISSAMAHARAMA_NAME",		"{LOC_CIVILIZATION_CSE_TISSAMAHARAMA_NAME}"	),
 	("pt_BR",	"LOC_CITY_NAME_TISSAMAHARAMA",						"{LOC_CIVILIZATION_CSE_TISSAMAHARAMA_NAME}"	),
 
@@ -1348,7 +1380,7 @@ VALUES
 	("pt_BR",	"LOC_LEADER_MINOR_CIV_CSE_URGENCH_NAME",		"{LOC_CIVILIZATION_CSE_URGENCH_NAME}"	),
 	("pt_BR",	"LOC_CITY_NAME_URGENCH",						"{LOC_CIVILIZATION_CSE_URGENCH_NAME}"	),
 
-	("pt_BR",	"LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_CSE_URGENCH_CHAPTER_HISTORY_PARA_1",	"As datas exatas em que Kunya-Urgench foi fundada permanecem incertas, mas os achados arqueológicos no Monte Kyrkmolla (uma das principais fortalezas do local) revelam que a cidade já tinha uma estrutura forte nos séculos V e IV aC. Alguns dos registros mais antigos mostram que Khwarezm foi conquistado pelos árabes em 712, e Kunya-Urgench recebeu o nome árabe 'Gurgandj'. A cidade alcançou proeminência entre os séculos X e X como a capital khoffzmiana e como um importante centro comercial, competindo em fama e população com muitas outras cidades da Ásia Central, como Bukhara. Tornou-se altamente próspera devido à sua localização estratégica nas principais rotas comerciais do sul para o norte, e do oeste para o leste, contribuindo enormemente para o desenvolvimento da ciência e da cultura na Ásia Central."	),
+	("pt_BR",	"LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_CSE_URGENCH_CHAPTER_HISTORY_PARA_1",	"As datas exatas em que Kunya-Urgench foi fundada permanecem incertas, mas os achados arqueológicos no Monte Kyrkmolla (uma das principais fortalezas do local) revelam que a cidade já tinha uma estrutura forte nos séculos V e IV aC. Alguns dos registros mais antigos mostram que Khwarezm foi conquistado pelos árabes em 712, e Kunya-Urgench recebeu o nome árabe 'Gurgandj'. A cidade alcançou proeminência entre os séculos X e X como a capital khoffzmiana e como um importante centro comercial, competindo em fama e população com muitas outras cidades da Ásia Central, como Bucara. Tornou-se altamente próspera devido à sua localização estratégica nas principais rotas comerciais do sul para o norte, e do oeste para o leste, contribuindo enormemente para o desenvolvimento da ciência e da cultura na Ásia Central."	),
 	("pt_BR",	"LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_CSE_URGENCH_CHAPTER_HISTORY_PARA_2",	"Em 1221, Genghis Khan destruiu a cidade na invasão mongol da Ásia Central, no que é considerado um dos massacres mais sangrentos da história da humanidade. Apesar dos efeitos devastadores da invasão, a cidade foi revivida e recuperou seu status anterior. Foi descrito pelo viajante árabe do século 14 Ibn Battuta como 'a maior, maior, mais bela e mais importante cidade dos turcos. Tem bons bazares e ruas largas, um grande número de edifícios e abundância de mercadorias' "	),
 	("pt_BR",	"LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_CSE_URGENCH_CHAPTER_HISTORY_PARA_3",	"Em 1373, Timur atacou Khwarezm e seu governante Yusef Sufi, da dinastia Sufi, rendeu-se a Timur. Em 1379, Yusef Sufi se rebelou contra Timur, que demitiu Urgench, e Yusef Sufi foi morto. Em 1388, a dinastia sufi de Urgench novamente se revoltou contra Timur; desta vez, Timur arrasou Urgench no solo e massacrou sua população, destruiu o sistema de irrigação da cidade e plantou cevada no chão onde antes ficava a cidade, deixando apenas uma mesquita de pé. Isto, juntamente com a súbita mudança do curso do rio Amu-Darya, constituiu o começo do declínio de Kunya-Urgench até o século XVI, quando foi substituído como capital regional por Khiva e acabou por ser abandonado."	),
 

@@ -165,7 +165,8 @@ function LookAtCityState( iPlayerID:number )
 	for _, pCity in pPlayerCities:Members() do
 		local locX			:number = pCity:GetX();
 		local locY			:number = pCity:GetY();
-		UI.LookAtPlotScreenPosition( locX, locY, 0.33, 0.5 );
+		UI.LookAtPlotScreenPosition( locX, locY, cameraXOffset, 0.5 );
+		break;
 	end				
 end
 
@@ -284,11 +285,13 @@ function GetSuzerainBonusText( playerID:number )
 	-- Unique Bonus
 	for leaderTraitPairInfo in GameInfo.LeaderTraits() do
 		if (leader ~= nil and leader == leaderTraitPairInfo.LeaderType) then
-			local traitInfo = GameInfo.Traits[leaderTraitPairInfo.TraitType];
+			local traitInfo : table = GameInfo.Traits[leaderTraitPairInfo.TraitType];
 			if (traitInfo ~= nil) then
 				local name = PlayerConfigurations[playerID]:GetCivilizationShortDescription();
 				text = text .. "[COLOR:SuzerainDark]" .. Locale.Lookup("LOC_CITY_STATES_SUZERAIN_UNIQUE_BONUS", name) .. "[ENDCOLOR] ";
-				text = text .. Locale.Lookup(traitInfo.Description);
+				if traitInfo.Description ~= nil then
+					text = text .. Locale.Lookup(traitInfo.Description);
+				end
 			end
 		end
 	end	
@@ -1281,7 +1284,11 @@ function ViewCityState( iPlayer:number )
 			Controls.PeaceWarButton:SetDisabled( not kCityState.CanDeclareWarOn );
 			warPeaceTooltip = warPeaceTooltip .. Locale.Lookup("LOC_CITY_STATES_DECLARE_WAR_DETAILS");
 			if not kCityState.CanDeclareWarOn then
-				warPeaceTooltip = warPeaceTooltip .. " " .. Locale.Lookup("LOC_CITY_STATES_TURNS_PEACE", m_iTurnsOfPeace + kCityState.iTurnChanged - Game.GetCurrentGameTurn() );
+				if HasTrait("TRAIT_CIVILIZATION_FACES_OF_PEACE",localPlayerID) then
+					warPeaceTooltip = Locale.Lookup("LOC_CIVILIZATION_NOT_ABLE_TO_DECLARE_SURPRISE_WAR");
+				else   
+					warPeaceTooltip = warPeaceTooltip .. " " .. Locale.Lookup("LOC_CITY_STATES_TURNS_PEACE", m_iTurnsOfPeace + kCityState.iTurnChanged - Game.GetCurrentGameTurn() );
+				end
 			end
 		end
 		Controls.PeaceWarButton:SetToolTipString( warPeaceTooltip );

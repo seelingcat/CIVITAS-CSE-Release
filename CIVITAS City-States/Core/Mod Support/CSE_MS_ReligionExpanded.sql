@@ -1,6 +1,6 @@
 /*
 	Mod Support | Religion Expanded
-	Authors: ChimpanG
+	Authors: ChimpanG, SeelingCat
 */
 
 -----------------------------------------------
@@ -25,8 +25,17 @@ BEGIN
 	VALUES	('MODIFIER_CSE_RELIGIOUS_'||SUBSTR(NEW.BuildingType,14)||'_FAITH',		'ModifierId',		'MODIFIER_CSE_RELIGIOUS_'||SUBSTR(NEW.BuildingType,14)||'_FAITH_MOD'	),
 			('MODIFIER_CSE_RELIGIOUS_'||SUBSTR(NEW.BuildingType,14)||'_FAITH_MOD',	'BuildingType',		NEW.BuildingType														),
 			('MODIFIER_CSE_RELIGIOUS_'||SUBSTR(NEW.BuildingType,14)||'_FAITH_MOD',	'YieldType',		'YIELD_FAITH'															),
-			('MODIFIER_CSE_RELIGIOUS_'||SUBSTR(NEW.BuildingType,14)||'_FAITH_MOD',	'Amount',			2																		),
 			('MODIFIER_CSE_RELIGIOUS_'||SUBSTR(NEW.BuildingType,14)||'_FAITH_MOD',	'CityStatesOnly',	1																		);
+
+	INSERT INTO ModifierArguments
+			(ModifierId,															Name,				Value																	)
+	SELECT	'MODIFIER_CSE_RELIGIOUS_'||SUBSTR(NEW.BuildingType,14)||'_FAITH_MOD',	'Amount',			3																		
+	WHERE EXISTS ( SELECT * FROM CivilizationLeaders WHERE LeaderType = 'LEADER_MENELIK');
+
+	INSERT INTO ModifierArguments
+			(ModifierId,															Name,				Value																	)
+	SELECT	'MODIFIER_CSE_RELIGIOUS_'||SUBSTR(NEW.BuildingType,14)||'_FAITH_MOD',	'Amount',			2																		
+	WHERE NOT EXISTS ( SELECT * FROM CivilizationLeaders WHERE LeaderType = 'LEADER_MENELIK');
 
 	INSERT INTO ModifierStrings
 			(ModifierId,														Context,	Text												)
