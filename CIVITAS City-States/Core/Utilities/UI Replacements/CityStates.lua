@@ -63,6 +63,13 @@ local MODE								:table = {
 local TEAM_RIBBON_PREFIX			:string = "ICON_TEAM_RIBBON_";
 local REPORT_CONTAINER_SIZE_PADDING	:number = -18;
 
+-- CQUI Addition: Inline CityState Quests (the_m4a)
+local CITYSTATEBASE_DEFAULT_SIZEY :number = 48;
+-- If CQUI is also active, CIVITAS will retrieve the inline City State Quest font size setting
+local CQUI_InlineCityStateQuestFontSize = 10;
+-- List of icons to remove from the City State Quest lines
+local ICON_NAMES = {"%[ICON_TechBoosted%] ", "%[ICON_CivicBoosted%] ", "%[ICON_TradeRoute%] ", "%[ICON_Barbarian%] "};
+
 -- ===========================================================================
 --	MEMBERS
 -- ===========================================================================
@@ -1053,6 +1060,110 @@ function AddCityStateRow( kCityState:table )
 	kInst.Icon:SetColor( kCityState.ColorSecondary );
 	kInst.Button:RegisterCallback( Mouse.eLClick, function() OpenSingleViewCityState( kCityState.iPlayer ) end );
 
+    -- =========== BEGIN CQUI Modification =========== --
+    -- CQUI Inline City State Quests, copied from that code 03/21/21
+    -- CQUI has this value as configurable, but that configured value may not be available to CIVITAS
+    anyQuests = false;
+    for _,kQuest in pairs( kCityState.Quests ) do
+        anyQuests = true;
+        questString = kQuest.Name;
+    end
+
+    -- CQUI is 1d44b5e7-753e-405b-af24-5ee634ec8a01
+    if Modding.IsModActive("1D44B5E7-753E-405B-AF24-5EE634EC8A01") then
+        CQUI_InlineCityStateQuestFontSize = GameConfiguration.GetValue("CQUI_InlineCityStateQuestFontSize");
+    end
+
+    if (anyQuests) then
+        kInst.QuestIcon:SetHide(true);
+        -- Adjust the size of the container based on the font size of the Inline City State Quest
+        kInst.CityStateBase:SetSizeY(CITYSTATEBASE_DEFAULT_SIZEY + CQUI_InlineCityStateQuestFontSize - 2);
+        kInst.QuestRow:SetHide(false);
+        kInst.CityStateQuest:SetFontSize(CQUI_InlineCityStateQuestFontSize);
+        kInst.CityStateQuest:SetString(CQUI_RemoveQuestIconsFromString(questString));
+        kInst.CityStateQuest:SetColor(kCityState.ColorSecondary);
+    else
+        kInst.CityStateBase:SetSizeY(CITYSTATEBASE_DEFAULT_SIZEY);
+        kInst.QuestRow:SetHide(true);
+    end
+
+    -- Determine the 2nd place (or first-place tie), produce text for Tooltip on the EnvoyCount label
+    local envoyTable:table = {};
+    -- Iterate through all players that have influenced this city state
+    local localPlayerID = Game.GetLocalPlayer();
+    for iOtherPlayer,influence in pairs(kCityState.Influence) do
+        local pLocalPlayer :table   = Players[localPlayerID];
+        local civName      :string  = "LOCAL_CITY_STATES_UNKNOWN";
+        local isLocalPlayer:boolean = false;
+        if (pLocalPlayer ~= nil) then
+            local pPlayerConfig :table = PlayerConfigurations[iOtherPlayer];
+            if (localPlayerID == iOtherPlayer) then
+                civName = Locale.Lookup("LOC_CITY_STATES_YOU") .. " (" .. Locale.Lookup(pPlayerConfig:GetPlayerName()) .. ")";
+                isLocalPlayer = true;
+            else
+                if (pLocalPlayer:GetDiplomacy():HasMet(iOtherPlayer)) then
+                    civName = Locale.Lookup(pPlayerConfig:GetPlayerName());
+                else
+                    civName = Locale.Lookup("LOCAL_CITY_STATES_UNKNOWN")
+                end
+            end
+
+            table.insert(envoyTable, {Name = civName, EnvoyCount = influence, IsLocalPlayer = isLocalPlayer});
+        end
+    end
+
+    if (#envoyTable > 0) then
+        -- Sort the table by value descending, alphabetically where tied, favoring local player
+        table.sort(envoyTable, 
+            function(a,b)
+                if (a.EnvoyCount == b.EnvoyCount) then
+                    if (a.IsLocalPlayer) then
+                        return true;
+                    elseif (b.IsLocalPlayer) then
+                        return false;
+                    else
+                        return a.Name < b.Name;
+                    end
+                else
+                    return a.EnvoyCount > b.EnvoyCount
+                end
+            end);
+
+        local envoysToolTip = Locale.Lookup("LOC_CITY_STATES_ENVOYS_SENT")..":";
+        for i=1, #envoyTable do
+            envoysToolTip = envoysToolTip .. "[NEWLINE] - " .. envoyTable[i].Name .. ": " .. envoyTable[i].EnvoyCount;
+        end
+
+        kInst.EnvoyCount:SetToolTipString(envoysToolTip);
+
+        if (#envoyTable > 1 and kInst.SecondHighestName ~= nil) then
+            -- Show 2nd place if there is one (recall Lua tables/arrays start at index 1)
+            -- The check on kInst.SecondHighestName is for cases where another mod replaces the XML, but not the citystates lua file
+            local secondPlaceIdx = 2;
+
+            -- is there a tie for first?
+            if (envoyTable[1].EnvoyCount == envoyTable[2].EnvoyCount) then
+                -- Already sorted above, so this is either local player or the leader appearing first alphabetically
+                secondPlaceIdx = 1;
+            end
+
+            local secondHighestIsPlayer = envoyTable[secondPlaceIdx].IsLocalPlayer;
+            local secondHighestName = envoyTable[secondPlaceIdx].Name;
+            local secondHighestEnvoys = envoyTable[secondPlaceIdx].EnvoyCount;
+
+            if (secondHighestIsPlayer) then
+                secondHighestName = Locale.Lookup("LOC_CITY_STATES_YOU");
+            end
+
+            -- Add changes to the actual UI object placeholders, which are created in the CityStates.xml file
+            kInst.SecondHighestName:SetColor(secondHighestIsPlayer and kCityState.ColorSecondary or COLOR_ICON_BONUS_OFF);
+            kInst.SecondHighestName:SetText(secondHighestName);
+            kInst.SecondHighestEnvoys:SetColor(secondHighestIsPlayer and kCityState.ColorSecondary or COLOR_ICON_BONUS_OFF);
+            kInst.SecondHighestEnvoys:SetText(secondHighestEnvoys);
+        end
+    end
+    -- =========== END CQUI Modification =========== --
+
 	return kInst;
 end
 
@@ -1980,6 +2091,20 @@ function OnLocalPlayerTurnEnd()
 	if not ContextPtr:IsHidden() then
 		Refresh();
 	end
+end
+
+-- ===========================================================================
+--	CQUI - For Inline City State quests
+-- ===========================================================================
+function CQUI_RemoveQuestIconsFromString( inStr:string )
+    local lookupStr :string = inStr;
+    local outStr :string = lookupStr;
+    for _,iconName in ipairs(ICON_NAMES) do
+        if (string.find(lookupStr, iconName)) then
+            outStr = string.gsub(lookupStr, iconName, "");
+        end
+    end
+    return outStr;
 end
 
 -- ===========================================================================

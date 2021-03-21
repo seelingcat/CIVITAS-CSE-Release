@@ -56,6 +56,7 @@ if Modding.IsModActive("1B28771A-C749-434B-9053-D1380C553DE9") or Modding.IsModA
 	-- ===========================================================================
 	function AddCityStateRow( kCityState:table )
 		local kInst:table = BASE_AddCityStateRow( kCityState );		
+        local hasAmbassador = false;
 		
 		local ambassadorData:table = m_CityStateGovernors[kCityState.iPlayer];
 		if ambassadorData.HasAnyAmbassador then
@@ -75,9 +76,22 @@ if Modding.IsModActive("1B28771A-C749-434B-9053-D1380C553DE9") or Modding.IsModA
 			kInst.AmbassadorButton:SetToolTipString(tooltip);
 			
 			kInst.AmbassadorButton:SetHide(false);
+            -- For CQUI, with the 2nd place Suzerain and Inline Tool-tips
+            hasAmbassador = true;
 		else
 			kInst.AmbassadorButton:SetHide(true);
 		end
+
+        -- =========== BEGIN CQUI Modification =========== --
+
+        if (hasAmbassador) then
+            -- Set the truncate length on the first place name to a shorter value in order to not cover up the ambassador
+            kInst.Suzerain:SetTruncateWidth(50);
+        else
+            kInst.Suzerain:SetTruncateWidth(60);
+        end
+
+        -- =========== END CQUI Modification =========== --
 
 		return kInst;
 	end
@@ -96,7 +110,6 @@ if Modding.IsModActive("1B28771A-C749-434B-9053-D1380C553DE9") or Modding.IsModA
 			playerName = playerConfig:GetPlayerName();
 		end
 		kItem.AmbassadorIcon:SetToolTipString(Locale.Lookup("LOC_CITY_STATE_PANEL_CIV_AMBASSADOR_TOOLTIP", playerName));
-
 
 		return kItem;
 	end
