@@ -1278,8 +1278,14 @@ function ViewList()
 		Controls.BonusScroll:CalculateSize();
 		--Controls.BonusArea:ReprocessAnchoring();
 
+        -- Kopachris: adjust relative sizing of the two scroll areas
+        -- adjust m_bonusAreaRatio to change how much space it gets
+        -- m_bonusAreaRatio = 0.5 is about half and half
+        local m_bonusAreaRatio = 0.5;
+        Controls.BonusArea:SetSizeY( (m_height - 264) * m_bonusAreaRatio );
 		local bonusAreaY:number = Controls.BonusArea:GetSizeY();
-		Controls.CityStateScroll:SetSizeY( m_height - (264 + bonusAreaY ) );
+		Controls.BonusScroll:CalculateSize();
+		Controls.CityStateScroll:SetSizeY( m_height - 264 - bonusAreaY );
 
 	else
 		Controls.BonusArea:SetHide( true );

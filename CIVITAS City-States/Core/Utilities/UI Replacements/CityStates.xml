@@ -42,14 +42,16 @@
                 </Grid>
             </Grid>
 
-            <ScrollPanel ID="CityStateScroll" Offset="12,164" Size="490,parent-174" Vertical="1" AutoScrollBar="1">
+            <!--Kopachris: originally Size="490,parent-174"-->
+            <ScrollPanel ID="CityStateScroll" Offset="12,164" Size="490,500" Vertical="1" AutoScrollBar="1">
                 <Stack ID="CityStateStack" Anchor="L,T" Offset="0,1" StackPadding="4" />
                 <ScrollBar Anchor="R,C" Offset="-1,0" AnchorSide="O,I" Style="ScrollVerticalBarAlt" />
             </ScrollPanel>
 
             <Label ID="NoneMet" Anchor="C,C" Offset="0,50" Align="Center" Style="FontFlair20" String="LOC_CITY_STATES_NONE_MET" Hidden="1"/>
 
-            <Grid ID="BonusArea" Anchor="L,B" Offset="0,70" Size="parent,parent-570" Texture="Controls_Glow" SliceCorner="90,90" SliceTextureSize="179,178" Color="0,0,0,255" Hidden="1">
+            <!--Kopachris: originally Size="parent,parent-570"-->
+            <Grid ID="BonusArea" Anchor="L,B" Offset="0,70" Size="parent,600" Texture="Controls_Glow" SliceCorner="90,90" SliceTextureSize="179,178" Color="0,0,0,255" Hidden="1">
                 <Grid ID="BonusDecoLeft" Offset="20,45" Size="18,parent-50" Texture="Controls_Deco" SliceCorner="9,24" SliceTextureSize="18,49" Color="30,36,40,255" />
                 <Grid ID="BonusDecoRight" Anchor="R,T" Offset="20,45" Size="18,parent-50" Texture="Controls_Deco" SliceCorner="9,24" SliceTextureSize="18,49" Color="30,36,40,255" SliceStart="20,0" />
 
@@ -57,7 +59,8 @@
                     <Image Size="parent,parent" Texture="Controls_Gradient_HalfRadial" Color="170,176,180,35" />
                     <Label ID="SubHeader" Anchor="C,C" Offset="0,3" Style="FontFlair24" Color0="170,176,180" String="{LOC_CITY_STATES_BONUSES_EARNED:upper}" SmallCaps="30" SmallCapsType="EveryWord" />
                 </Grid>
-                <ScrollPanel ID="BonusScroll" Offset="50,39" Size="400,parent-39" Vertical="1">
+                <!--Kopachris: added AutoScrollBar="1"-->
+                <ScrollPanel ID="BonusScroll" Offset="50,39" Size="400,parent-39" Vertical="1" AutoScrollBar="1">
                     <Stack ID="BonusStack" Anchor="L,T" Offset="0,1" StackPadding="4" />
                     <ScrollBar Anchor="R,C" Offset="10,0" AnchorSide="O,I" Style="ScrollVerticalBarAlt" />
                 </ScrollPanel>
